@@ -29,7 +29,7 @@ class MySqlGrammar extends Grammar
     /**
      * Compile a create database command.
      *
-     * @param  string $name
+     * @param  string  $name
      * @param  \Illuminate\Database\Connection  $connection
      * @return string
      */
@@ -46,7 +46,7 @@ class MySqlGrammar extends Grammar
     /**
      * Compile a drop database if exists command.
      *
-     * @param  string $name
+     * @param  string  $name
      * @return string
      */
     public function compileDropDatabaseIfExists($name)
@@ -242,6 +242,18 @@ class MySqlGrammar extends Grammar
     }
 
     /**
+     * Compile a fulltext index key command.
+     *
+     * @param  \Illuminate\Database\Schema\Blueprint  $blueprint
+     * @param  \Illuminate\Support\Fluent  $command
+     * @return string
+     */
+    public function compileFulltext(Blueprint $blueprint, Fluent $command)
+    {
+        return $this->compileKey($blueprint, $command, 'fulltext');
+    }
+
+    /**
      * Compile a spatial index key command.
      *
      * @param  \Illuminate\Database\Schema\Blueprint  $blueprint
@@ -348,6 +360,18 @@ class MySqlGrammar extends Grammar
         $index = $this->wrap($command->index);
 
         return "alter table {$this->wrapTable($blueprint)} drop index {$index}";
+    }
+
+    /**
+     * Compile a drop fulltext index command.
+     *
+     * @param  \Illuminate\Database\Schema\Blueprint  $blueprint
+     * @param  \Illuminate\Support\Fluent  $command
+     * @return string
+     */
+    public function compileDropFulltext(Blueprint $blueprint, Fluent $command)
+    {
+        return $this->compileDropIndex($blueprint, $command);
     }
 
     /**
@@ -488,6 +512,17 @@ class MySqlGrammar extends Grammar
     protected function typeString(Fluent $column)
     {
         return "varchar({$column->length})";
+    }
+
+    /**
+     * Create the column definition for a tiny text type.
+     *
+     * @param  \Illuminate\Support\Fluent  $column
+     * @return string
+     */
+    protected function typeTinyText(Fluent $column)
+    {
+        return 'tinytext';
     }
 
     /**
@@ -691,7 +726,11 @@ class MySqlGrammar extends Grammar
     {
         $columnType = $column->precision ? "datetime($column->precision)" : 'datetime';
 
-        return $column->useCurrent ? "$columnType default CURRENT_TIMESTAMP" : $columnType;
+        $current = $column->precision ? "CURRENT_TIMESTAMP($column->precision)" : 'CURRENT_TIMESTAMP';
+
+        $columnType = $column->useCurrent ? "$columnType default $current" : $columnType;
+
+        return $column->useCurrentOnUpdate ? "$columnType on update $current" : $columnType;
     }
 
     /**

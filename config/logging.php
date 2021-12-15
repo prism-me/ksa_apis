@@ -40,6 +40,11 @@ return [
             'channels' => ['single'],
             'ignore_exceptions' => false,
         ],
+        'PayTabs' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/paytabs.log'),
+            'level' => 'info',
+        ],
 
         'single' => [
             'driver' => 'single',

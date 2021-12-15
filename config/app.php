@@ -178,6 +178,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        Basel\Paytabs\PaytabsServiceProvider::class,
 
     ],
 
@@ -235,6 +236,7 @@ return [
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Paytabs' => Basel\Paytabs\Facades\PaytabsFacade::class,
 
     ],
 

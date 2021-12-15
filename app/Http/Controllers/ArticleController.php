@@ -146,7 +146,9 @@ class ArticleController extends Controller
             echo json_encode(['message'=>'Data has been deleted','status'=>200]);
         
         }else{
+
             echo json_encode(['message'=>'Data has not been deleted' ,'status'=>404]);
+            
         }
     }
 }

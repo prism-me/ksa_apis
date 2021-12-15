@@ -47,6 +47,7 @@ class AuthController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function register(Request $request) {
+      
 
         $check = User::where('email','=',$request->email)->count();
         $user = User::where('email','=',$request->email)->get();

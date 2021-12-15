@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PayementController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -59,24 +60,33 @@ Route::group([
     Route::get('/user-profile', [AuthController::class, 'userProfile']);    
     Route::resource('/wishlist','WishlistController');
     Route::post('/reset', [AuthController::class, 'reset']); 
+
+    Route::resource('/order',OrderController::class);
+    Route::resource('/shipping',ShippingController::class);
+    Route::post('make-payement/{id}',[PayementController::class,'store']);
+    Route::get('get-payement/{id}',[PayementController::class,'show']);
 });
 
 
 Route::get('auth/all_users', [AuthController::class, 'all_users']);
 
-Route::group([
-    'middleware' => 'api',
-    'prefix' => 'ar'
+// Route::group([
+//     'middleware' => 'api',
+//     'prefix' => 'ar'
 
-], function ($router) {
+// ], function ($router) {
 
-    Route::resource('pages','AR\PageController');
+//     Route::resource('pages','AR\PageController');
 
-});
+// });
 
 Route::fallback(function () {
     echo  json_encode(['message'=>'Undefined Route']);
 });
+
+
+// Payement Gateway
+
 
 
 
