@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PayementController;
+use App\Http\Controllers\PaytabsController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -49,7 +51,7 @@ Route::post('product_sorting','CategoryController@product_sorting');
 
 Route::group([
     'middleware' => 'api',
-    'prefix' => 'auth'
+
 
 ], function ($router) {
 
@@ -59,12 +61,22 @@ Route::group([
     Route::post('/refresh', [AuthController::class, 'refresh']);
     Route::get('/user-profile', [AuthController::class, 'userProfile']);    
     Route::resource('/wishlist','WishlistController');
-    Route::post('/reset', [AuthController::class, 'reset']); 
+    // User DEtail
+    Route::post('reset', [UserController::class, 'reset']); 
+    Route::get('user-detail', [UserController::class, 'userDetail']); 
+    Route::post('update-detail', [UserController::class, 'updateUser']); 
+
+    // Card Detail
+    Route::resource('/cards',CardController::class);
+
 
     Route::resource('/order',OrderController::class);
+    Route::resource('address',AddressController::class);
     Route::resource('/shipping',ShippingController::class);
     Route::post('make-payement/{id}',[PayementController::class,'store']);
     Route::get('get-payement/{id}',[PayementController::class,'show']);
+
+
 });
 
 
@@ -83,10 +95,5 @@ Route::get('auth/all_users', [AuthController::class, 'all_users']);
 Route::fallback(function () {
     echo  json_encode(['message'=>'Undefined Route']);
 });
-
-
-// Payement Gateway
-
-
 
 

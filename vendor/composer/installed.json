@@ -61,17 +61,17 @@
         },
         {
             "name": "barryvdh/laravel-debugbar",
-            "version": "v3.6.4",
-            "version_normalized": "3.6.4.0",
+            "version": "v3.6.5",
+            "version_normalized": "3.6.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "3c2d678269ba60e178bcd93e36f6a91c36b727f1"
+                "reference": "ccf109f8755dcc7e58779d1aeb1051b04e0b4bef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/3c2d678269ba60e178bcd93e36f6a91c36b727f1",
-                "reference": "3c2d678269ba60e178bcd93e36f6a91c36b727f1",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/ccf109f8755dcc7e58779d1aeb1051b04e0b4bef",
+                "reference": "ccf109f8755dcc7e58779d1aeb1051b04e0b4bef",
                 "shasum": ""
             },
             "require": {
@@ -89,7 +89,7 @@
                 "phpunit/phpunit": "^8.5|^9.0",
                 "squizlabs/php_codesniffer": "^3.5"
             },
-            "time": "2021-10-21T10:57:31+00:00",
+            "time": "2021-12-14T14:45:18+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -100,7 +100,7 @@
                         "Barryvdh\\Debugbar\\ServiceProvider"
                     ],
                     "aliases": {
-                        "Debugbar": "Barryvdh\\Debugbar\\Facade"
+                        "Debugbar": "Barryvdh\\Debugbar\\Facades\\Debugbar"
                     }
                 }
             },
@@ -133,7 +133,7 @@
             ],
             "support": {
                 "issues": "https://github.com/barryvdh/laravel-debugbar/issues",
-                "source": "https://github.com/barryvdh/laravel-debugbar/tree/v3.6.4"
+                "source": "https://github.com/barryvdh/laravel-debugbar/tree/v3.6.5"
             },
             "funding": [
                 {
@@ -146,59 +146,6 @@
                 }
             ],
             "install-path": "../barryvdh/laravel-debugbar"
-        },
-        {
-            "name": "baselrabia/paytabs-with-laravel",
-            "version": "v1.1.0",
-            "version_normalized": "1.1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/baselrabia/paytabs-with-laravel.git",
-                "reference": "d4123e3e1320531afab7c24173e94743a1482772"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/baselrabia/paytabs-with-laravel/zipball/d4123e3e1320531afab7c24173e94743a1482772",
-                "reference": "d4123e3e1320531afab7c24173e94743a1482772",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.2"
-            },
-            "time": "2021-01-27T22:59:23+00:00",
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Basel\\Paytabs\\PaytabsServiceProvider"
-                    ],
-                    "aliases": {
-                        "Paytabs": "Basel\\Paytabs\\Facades\\PaytabsFacade"
-                    }
-                }
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Basel\\Paytabs\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "baselrabia",
-                    "email": "baselrabia@gmail.com"
-                }
-            ],
-            "description": "integrate paytabs with laravel",
-            "support": {
-                "issues": "https://github.com/baselrabia/paytabs-with-laravel/issues",
-                "source": "https://github.com/baselrabia/paytabs-with-laravel/tree/v1.1.0"
-            },
-            "install-path": "../baselrabia/paytabs-with-laravel"
         },
         {
             "name": "brick/math",
@@ -803,26 +750,23 @@
         },
         {
             "name": "ezyang/htmlpurifier",
-            "version": "v4.13.0",
-            "version_normalized": "4.13.0.0",
+            "version": "v4.14.0",
+            "version_normalized": "4.14.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezyang/htmlpurifier.git",
-                "reference": "08e27c97e4c6ed02f37c5b2b20488046c8d90d75"
+                "reference": "12ab42bd6e742c70c0a52f7b82477fcd44e64b75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/08e27c97e4c6ed02f37c5b2b20488046c8d90d75",
-                "reference": "08e27c97e4c6ed02f37c5b2b20488046c8d90d75",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/12ab42bd6e742c70c0a52f7b82477fcd44e64b75",
+                "reference": "12ab42bd6e742c70c0a52f7b82477fcd44e64b75",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2"
             },
-            "require-dev": {
-                "simpletest/simpletest": "dev-master#72de02a7b80c6bb8864ef9bf66d41d2f58f826bd"
-            },
-            "time": "2020-06-29T00:56:53+00:00",
+            "time": "2021-12-25T01:21:49+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -854,7 +798,7 @@
             ],
             "support": {
                 "issues": "https://github.com/ezyang/htmlpurifier/issues",
-                "source": "https://github.com/ezyang/htmlpurifier/tree/master"
+                "source": "https://github.com/ezyang/htmlpurifier/tree/v4.14.0"
             },
             "install-path": "../ezyang/htmlpurifier"
         },
@@ -928,17 +872,17 @@
         },
         {
             "name": "facade/ignition",
-            "version": "2.17.2",
-            "version_normalized": "2.17.2.0",
+            "version": "2.17.3",
+            "version_normalized": "2.17.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "af3cd70d58ca3ef5189ff0e59efbe5a5c043e2d2"
+                "reference": "29f1be7f45f6fe4ffcf59a1c87bb469d47f1d227"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/af3cd70d58ca3ef5189ff0e59efbe5a5c043e2d2",
-                "reference": "af3cd70d58ca3ef5189ff0e59efbe5a5c043e2d2",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/29f1be7f45f6fe4ffcf59a1c87bb469d47f1d227",
+                "reference": "29f1be7f45f6fe4ffcf59a1c87bb469d47f1d227",
                 "shasum": ""
             },
             "require": {
@@ -963,7 +907,7 @@
             "suggest": {
                 "laravel/telescope": "^3.1"
             },
-            "time": "2021-11-29T14:04:22+00:00",
+            "time": "2021-12-23T13:28:01+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1942,17 +1886,17 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.75.0",
-            "version_normalized": "8.75.0.0",
+            "version": "v8.77.1",
+            "version_normalized": "8.77.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "0bb91d3176357da232da69762a64b0e0a0988637"
+                "reference": "994dbac5c6da856c77c81a411cff5b7d31519ca8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/0bb91d3176357da232da69762a64b0e0a0988637",
-                "reference": "0bb91d3176357da232da69762a64b0e0a0988637",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/994dbac5c6da856c77c81a411cff5b7d31519ca8",
+                "reference": "994dbac5c6da856c77c81a411cff5b7d31519ca8",
                 "shasum": ""
             },
             "require": {
@@ -1970,7 +1914,7 @@
                 "opis/closure": "^3.6",
                 "php": "^7.3|^8.0",
                 "psr/container": "^1.0",
-                "psr/log": "^1.0 || ^2.0",
+                "psr/log": "^1.0|^2.0",
                 "psr/simple-cache": "^1.0",
                 "ramsey/uuid": "^4.2.2",
                 "swiftmailer/swiftmailer": "^6.3",
@@ -2070,7 +2014,7 @@
                 "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^2.0).",
                 "wildbit/swiftmailer-postmark": "Required to use Postmark mail driver (^3.0)."
             },
-            "time": "2021-12-07T14:55:46+00:00",
+            "time": "2021-12-21T20:22:29+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2117,17 +2061,17 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.12.10",
-            "version_normalized": "1.12.10.0",
+            "version": "v1.12.12",
+            "version_normalized": "1.12.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "9d5000703c7f811588a780b9aab91cca5c336319"
+                "reference": "c60773f04f093bd1d2f3b99ff9e5a1aa5b05b8b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/9d5000703c7f811588a780b9aab91cca5c336319",
-                "reference": "9d5000703c7f811588a780b9aab91cca5c336319",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/c60773f04f093bd1d2f3b99ff9e5a1aa5b05b8b6",
+                "reference": "c60773f04f093bd1d2f3b99ff9e5a1aa5b05b8b6",
                 "shasum": ""
             },
             "require": {
@@ -2136,7 +2080,7 @@
                 "illuminate/support": "^8.0|^9.0",
                 "php": "^7.3|^8.0"
             },
-            "time": "2021-12-07T16:25:11+00:00",
+            "time": "2021-12-16T14:58:08+00:00",
             "bin": [
                 "bin/sail"
             ],
@@ -4900,17 +4844,17 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.5.10",
-            "version_normalized": "9.5.10.0",
+            "version": "9.5.11",
+            "version_normalized": "9.5.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "c814a05837f2edb0d1471d6e3f4ab3501ca3899a"
+                "reference": "2406855036db1102126125537adb1406f7242fdd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c814a05837f2edb0d1471d6e3f4ab3501ca3899a",
-                "reference": "c814a05837f2edb0d1471d6e3f4ab3501ca3899a",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2406855036db1102126125537adb1406f7242fdd",
+                "reference": "2406855036db1102126125537adb1406f7242fdd",
                 "shasum": ""
             },
             "require": {
@@ -4951,7 +4895,7 @@
                 "ext-soap": "*",
                 "ext-xdebug": "*"
             },
-            "time": "2021-09-25T07:38:51+00:00",
+            "time": "2021-12-25T07:07:57+00:00",
             "bin": [
                 "phpunit"
             ],
@@ -4990,11 +4934,11 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.10"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.11"
             },
             "funding": [
                 {
-                    "url": "https://phpunit.de/donate.html",
+                    "url": "https://phpunit.de/sponsors.html",
                     "type": "custom"
                 },
                 {
@@ -9307,17 +9251,17 @@
         },
         {
             "name": "tymon/jwt-auth",
-            "version": "dev-develop",
-            "version_normalized": "dev-develop",
+            "version": "1.0.2",
+            "version_normalized": "1.0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tymondesigns/jwt-auth.git",
-                "reference": "ab00f2d7cce5f043067aef7849cdc792de2df635"
+                "reference": "e588cb719539366c0e2f6017f975379cb73e9680"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tymondesigns/jwt-auth/zipball/ab00f2d7cce5f043067aef7849cdc792de2df635",
-                "reference": "ab00f2d7cce5f043067aef7849cdc792de2df635",
+                "url": "https://api.github.com/repos/tymondesigns/jwt-auth/zipball/e588cb719539366c0e2f6017f975379cb73e9680",
+                "reference": "e588cb719539366c0e2f6017f975379cb73e9680",
                 "shasum": ""
             },
             "require": {
@@ -9328,18 +9272,16 @@
                 "lcobucci/jwt": "<3.4",
                 "namshi/jose": "^7.0",
                 "nesbot/carbon": "^1.0|^2.0",
-                "php": "^7.2|^8.0"
+                "php": "^5.5.9|^7.0"
             },
             "require-dev": {
                 "illuminate/console": "^5.2|^6|^7|^8",
                 "illuminate/database": "^5.2|^6|^7|^8",
                 "illuminate/routing": "^5.2|^6|^7|^8",
                 "mockery/mockery": ">=0.9.9",
-                "phpunit/phpunit": "^8.5|^9.4",
-                "yoast/phpunit-polyfills": "^0.2.0"
+                "phpunit/phpunit": "~4.8|~6.0"
             },
-            "time": "2021-02-02T14:44:28+00:00",
-            "default-branch": true,
+            "time": "2020-11-27T12:32:42+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {

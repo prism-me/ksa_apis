@@ -142,6 +142,7 @@ class AuthController extends Controller
         return $users;
         
     }
+    
     public function reset(Request $request){
 
 
@@ -152,8 +153,6 @@ class AuthController extends Controller
         ]);
 
         if(!$validator->fails()){
-            
-            
             $check = ['email' =>$request->email ,'password'=>$request->password];
 
             if( $token = auth()->attempt($check)){

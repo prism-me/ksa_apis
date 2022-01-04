@@ -195,7 +195,6 @@ class ComposerStaticInit4eff9b8ce4d2c5845512c64661459907
         'B' => 
         array (
             'Brick\\Math\\' => 11,
-            'Basel\\Paytabs\\' => 14,
             'Barryvdh\\Debugbar\\' => 18,
         ),
         'A' => 
@@ -586,10 +585,6 @@ class ComposerStaticInit4eff9b8ce4d2c5845512c64661459907
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
         ),
-        'Basel\\Paytabs\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/baselrabia/paytabs-with-laravel/src',
-        ),
         'Barryvdh\\Debugbar\\' => 
         array (
             0 => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src',
@@ -635,6 +630,7 @@ class ComposerStaticInit4eff9b8ce4d2c5845512c64661459907
         'App\\Http\\Controllers\\OrderController' => __DIR__ . '/../..' . '/app/Http/Controllers/OrderController.php',
         'App\\Http\\Controllers\\PageController' => __DIR__ . '/../..' . '/app/Http/Controllers/PageController.php',
         'App\\Http\\Controllers\\PayementController' => __DIR__ . '/../..' . '/app/Http/Controllers/PayementController.php',
+        'App\\Http\\Controllers\\PaytabsController' => __DIR__ . '/../..' . '/app/Http/Controllers/PaytabsController.php',
         'App\\Http\\Controllers\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProductController.php',
         'App\\Http\\Controllers\\ReviewController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReviewController.php',
         'App\\Http\\Controllers\\SectionController' => __DIR__ . '/../..' . '/app/Http/Controllers/SectionController.php',
@@ -665,6 +661,7 @@ class ComposerStaticInit4eff9b8ce4d2c5845512c64661459907
         'App\\Models\\Order' => __DIR__ . '/../..' . '/app/Models/Order.php',
         'App\\Models\\Page' => __DIR__ . '/../..' . '/app/Models/Page.php',
         'App\\Models\\Payement' => __DIR__ . '/../..' . '/app/Models/Payement.php',
+        'App\\Models\\PaytabsInvoice' => __DIR__ . '/../..' . '/app/Models/PaytabsInvoice.php',
         'App\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Product.php',
         'App\\Models\\Review' => __DIR__ . '/../..' . '/app/Models/Review.php',
         'App\\Models\\Section' => __DIR__ . '/../..' . '/app/Models/Section.php',
@@ -713,6 +710,7 @@ class ComposerStaticInit4eff9b8ce4d2c5845512c64661459907
         'Barryvdh\\Debugbar\\DataFormatter\\SimpleFormatter' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/DataFormatter/SimpleFormatter.php',
         'Barryvdh\\Debugbar\\DebugbarViewEngine' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/DebugbarViewEngine.php',
         'Barryvdh\\Debugbar\\Facade' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Facade.php',
+        'Barryvdh\\Debugbar\\Facades\\Debugbar' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Facades/Debugbar.php',
         'Barryvdh\\Debugbar\\JavascriptRenderer' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/JavascriptRenderer.php',
         'Barryvdh\\Debugbar\\LaravelDebugbar' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/LaravelDebugbar.php',
         'Barryvdh\\Debugbar\\LumenServiceProvider' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/LumenServiceProvider.php',
@@ -729,9 +727,6 @@ class ComposerStaticInit4eff9b8ce4d2c5845512c64661459907
         'Barryvdh\\Debugbar\\Twig\\Extension\\Stopwatch' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Twig/Extension/Stopwatch.php',
         'Barryvdh\\Debugbar\\Twig\\Node\\StopwatchNode' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Twig/Node/StopwatchNode.php',
         'Barryvdh\\Debugbar\\Twig\\TokenParser\\StopwatchTokenParser' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Twig/TokenParser/StopwatchTokenParser.php',
-        'Basel\\Paytabs\\Facades\\PaytabsFacade' => __DIR__ . '/..' . '/baselrabia/paytabs-with-laravel/src/Facades/PaytabsFacade.php',
-        'Basel\\Paytabs\\Paytabs' => __DIR__ . '/..' . '/baselrabia/paytabs-with-laravel/src/Paytabs.php',
-        'Basel\\Paytabs\\PaytabsServiceProvider' => __DIR__ . '/..' . '/baselrabia/paytabs-with-laravel/src/PaytabsServiceProvider.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
         'Brick\\Math\\BigInteger' => __DIR__ . '/..' . '/brick/math/src/BigInteger.php',
         'Brick\\Math\\BigNumber' => __DIR__ . '/..' . '/brick/math/src/BigNumber.php',
@@ -2432,6 +2427,7 @@ class ComposerStaticInit4eff9b8ce4d2c5845512c64661459907
         'Illuminate\\Database\\Eloquent\\Casts\\AsEncryptedArrayObject' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Casts/AsEncryptedArrayObject.php',
         'Illuminate\\Database\\Eloquent\\Casts\\AsEncryptedCollection' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Casts/AsEncryptedCollection.php',
         'Illuminate\\Database\\Eloquent\\Casts\\AsStringable' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Casts/AsStringable.php',
+        'Illuminate\\Database\\Eloquent\\Casts\\Attribute' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Casts/Attribute.php',
         'Illuminate\\Database\\Eloquent\\Collection' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Collection.php',
         'Illuminate\\Database\\Eloquent\\Concerns\\GuardsAttributes' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php',
         'Illuminate\\Database\\Eloquent\\Concerns\\HasAttributes' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php',

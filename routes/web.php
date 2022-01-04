@@ -23,7 +23,9 @@ Route::get('/excel',function(){
     return view('import');
 });
 
-Route::post('importProducts','ProductController@import')->name('importProducts');
-    Route::get('/paytabs_payment', 'PaytabsController@index');
-    Route::post('/paytabs_response', 'PaytabsController@response');
+
+// Route::post('/paymentIPN', [\Paytabscom\Laravel_paytabs\Controllers\PaytabsLaravelListenerApi::class, 'paymentIPN'])->name('payment_ipn');
+// Route::get('/payment', [\Paytabscom\Laravel_paytabs\Controllers\PaytabsLaravelListenerApi::class, 'index'])->name('payment');
+
+Route::post('/paymentIPN', [PaytabsController::class, 'paymentIPN']);
 

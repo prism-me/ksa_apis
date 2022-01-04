@@ -86,7 +86,6 @@ return [
                 'stream' => 'php://stderr',
             ],
         ],
-
         'syslog' => [
             'driver' => 'syslog',
             'level' => env('LOG_LEVEL', 'debug'),
@@ -104,6 +103,11 @@ return [
 
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
+        ],
+        'PayTabs' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/paytabs.log'),
+            'level' => 'info',
         ],
     ],
 

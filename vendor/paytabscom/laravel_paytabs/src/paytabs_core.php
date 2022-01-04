@@ -687,7 +687,7 @@ class PaytabsApi
 
     private function __construct($region, $profile_id, $server_key)
     {
-        $this->base_url = self::BASE_URLS[$region]['endpoint'];
+        // /$this->base_url = self::BASE_URLS[$region]['endpoint'];
         $this->setAuth($profile_id, $server_key);
     }
 
