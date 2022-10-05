@@ -201,6 +201,24 @@ class ArticleCategoryController extends Controller
         
     }
     }
+    
+    
+    public function articleCategoryIndexing(Request $request){
+        
+        $data = $request->article_category_data;
+        
+
+        foreach($data as $single){
+            
+                        
+            $product = ArticleCategory::where('route' , $single['route'])->update(['currentIndex' => $single['currentIndex']]);
+            
+            
+        }
+        
+        
+        return ['data'=>'ArticleCategory order has been updated.','status'=>200];
+    }
 
 
 

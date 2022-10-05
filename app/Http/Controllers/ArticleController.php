@@ -151,4 +151,22 @@ class ArticleController extends Controller
             
         }
     }
+    
+    public function articleIndexing(Request $request){
+        
+        $data = $request->article_data;
+        
+        foreach($data as $single){
+            
+                        
+            $product = Article::where('route' , $single['route'])->update(['currentIndex' => $single['currentIndex']]);
+            
+            
+        }
+        
+        
+        return ['data'=>'Article order has been updated.','status'=>200];
+        
+        
+    }
 }

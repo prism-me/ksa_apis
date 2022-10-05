@@ -10,14 +10,14 @@ use Validator;
 class UserController extends Controller
 {
 
-    public function userDetail(){
-        $user = User::select('name','email','is_social','profile')->where('_id',Auth::id())->first();
+    public function userDetail(Request $request){
+        $user = User::select('name','email','is_social','profile')->where('_id',$request->user_id)->first();
         return $user;
     }
 
     public function updateUser(Request $request){
         $input = $request->all();
-        $update = User::where('_id',Auth::id())->update($input);
+        $update = User::where('_id',$request->user_id)->update($input);
         if($update){
             
             echo json_encode(['message','Profile Updated successfully','status'=>200]);
@@ -43,16 +43,15 @@ class UserController extends Controller
 
         }else{
            
-            $user = Auth::user();
+            $user = User::where('_id',$request->user_id)->first();
     
-            if (!Hash::check($request->current_password, $user->password)) {
+            if (!Hash::check($request->current_password,$user->password)) {
                 echo json_encode(['message','Current password does not match!','status'=>200]);
             }
     
             $user->password = Hash::make($request->password);
             $user->save();
             echo json_encode(['message','Password successfully changed!','status'=>200]);
-           
       
         }
     }

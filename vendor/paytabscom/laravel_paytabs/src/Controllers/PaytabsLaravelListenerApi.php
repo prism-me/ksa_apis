@@ -13,8 +13,8 @@ class PaytabsLaravelListenerApi extends BaseController
     /**
      * RESTful callable action able to receive: callback request\IPN Default Web request from the payment gateway after payment is processed
      */
-    public function paymentIPN(Request $request){
- 
+    public function paymentIPN(Request $request)
+    {
         try{
             $ipnRequest= new IpnRequest($request);
 

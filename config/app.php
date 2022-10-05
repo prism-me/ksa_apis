@@ -180,6 +180,7 @@ return [
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Paytabscom\Laravel_paytabs\PaypageServiceProvider::class,
 
+
     ],
 
     /*

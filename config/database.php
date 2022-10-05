@@ -45,8 +45,8 @@ return [
 
         'mongodb' => [
             'driver' => 'mongodb',
-        'dsn'=>'mongodb+srv://pigeon_user:Prism2020@cluster0.ww757.mongodb.net/pigeon_db?retryWrites=true&w=majority',
-        'database' => 'pigeon_db',
+        'dsn'=>'mongodb+srv://pigeon_user:Prism2020@cluster0.ww757.mongodb.net/pigeon_ksa?retryWrites=true&w=majority',
+        'database' => 'pigeon_ksa',
         
             // 'driver'   => 'mongodb',
             // 'host'     => [

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 use App\Models\Card;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Validator;
 
 class CardController extends Controller
@@ -13,10 +12,11 @@ class CardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $card = Card::where('user_id',Auth::id())->get();
-        return json_encode($card);
+       
+         $address = Card::where('user_id',$request->user_id)->whereNull('deleted_at')->get();
+        return json_encode($address);
     }
 
     
@@ -30,7 +30,7 @@ class CardController extends Controller
     public function store(Request $request)
     {
        $input = $request->all();
-       $input['user_id'] = Auth::id();
+       $input['user_id'] = $request->user_id;
      
        $create  = Card::create($input);
        if($create){
@@ -63,7 +63,7 @@ class CardController extends Controller
     public function update(Request $request, $id)
     {
         $input = $request->all(); 
-        $update = Card::where('_id',$id)->where('user_id',Auth::id())->update($input);   
+        $update = Card::where('_id',$id)->update($input);   
         if($update){
             echo json_encode(['message'=>'Data has been Saved','status'=>200]);
         }else{

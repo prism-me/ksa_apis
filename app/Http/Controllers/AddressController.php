@@ -14,9 +14,9 @@ class AddressController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $address = Address::where('user_id',Auth::id())->get();
+        $address = Address::where('user_id',$request->user_id)->whereNull('deleted_at')->get();
         return json_encode($address);
     }
 
@@ -57,7 +57,7 @@ class AddressController extends Controller
      */
     public function show($id)
     {
-        $address = Address::where('user_id',Auth::id())->where('_id',$id)->get();
+        $address = Address::where('_id',$id)->get();
         return $address;
     }
 
@@ -72,6 +72,7 @@ class AddressController extends Controller
      */
     public function update(Request $request, $id)
     {
+ 
         $validator = Validator::make($request->all(), [
 
             'first_name' => 'required',
@@ -86,7 +87,7 @@ class AddressController extends Controller
        
         }else{
         
-            $address = Address::where('user_id',Auth::id())->where('_id',$id)->update($request->all());
+            $address = Address::where('_id',$id)->update($request->all());
 
             if($address){
 
@@ -107,13 +108,17 @@ class AddressController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Address $address)
-    {
-        if($address->delete()){
-            echo json_encode(['status'=>1,'message'=>'your task has been deleted']);
+    public function destroy($address)
+    {   
+       
+    
+        if(Address::where('_id', $address)->delete()){
+            
+            echo json_encode(['message'=>'Data Deleted.','status'=>200]);
+           
         }else{
-           echo json_encode(['status'=>0,'message'=>'Server Error while']);
-
-        }  
+            echo json_encode(['message'=>'Data is not updated','status'=>404]);
+        } 
+        
     }
 }

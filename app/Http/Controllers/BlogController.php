@@ -16,7 +16,7 @@ class BlogController extends Controller
     public function index()
     {   
      
-        $blog = Blog::all();
+        $blog = Blog::orderBy('_id','desc')->get();
         return $blog;
     }
 
@@ -77,6 +77,7 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
+       
         return $blog;
     }
 

@@ -24,12 +24,12 @@ class ProductController extends Controller
     {       
         if(request()->page == 'all'){
             
-            $category = Product::with(['reviews','category_order','sub_category_order'])->orderBy('order', 'asc')->whereNull('deleted_at')->get();
+            $category = Product::with(['reviews','category_order','sub_category_order'])->whereNull('deleted_at')->orderBy('order', 'asc')->get();
         
 
         }else{
             
-            $category = Product::with(['reviews','category_order','sub_category_order' ])->orderBy('order', 'asc')->whereNull('deleted_at')->paginate(12);
+            $category = Product::with(['reviews','category_order','sub_category_order' ])->whereNull('deleted_at')->orderBy('order', 'asc')->paginate(12);
 
 
         }
@@ -171,9 +171,9 @@ class ProductController extends Controller
         if($validator->fails()){
             echo json_encode(['errors'=>$validator->errors(),'status'=>404]);
         }else{
-        
-            $creatProduct = Product::where('_id',$product->_id)->update($request->all());
-       
+            $data = $request->except('_id');
+            $creatProduct = Product::where('route',$request->route)->update($request->all());
+          
             if($creatProduct){
                 echo json_encode(['message'=>'Data has been Saved','status'=>200]);
             }else{
@@ -229,18 +229,18 @@ class ProductController extends Controller
             
             if($filter == 'all'){
 
-                $cat = Product::where($search)->orderby('order','asc')->paginate(12);
+                $cat = Product::where($search)->whereNull('deleted_at')->orderby('order','asc')->paginate(12);
         
             }else{
                 
                 $search['sortings'] = $filter;
                 
-                $cat = Product::where($search)->orderby('order','asc')->paginate(12);
+                $cat = Product::where($search)->whereNull('deleted_at')->orderby('order','asc')->paginate(12);
             }
             
         }else{
           
-            $cat = Product::where($search)->orderby('order','asc')->paginate(12);
+            $cat = Product::where($search)->whereNull('deleted_at')->orderby('order','asc')->paginate(12);
         
             
         }
@@ -257,5 +257,25 @@ class ProductController extends Controller
          return back();
     }
 
+
+    public function productIndexing(Request $request){
+        
+        $data = $request->product_data;
+        
+        
+        
+        foreach($data as $single){
+            
+                        
+            $product = Product::where('route' , $single['route'])->update(['currentIndex' => $single['currentIndex']]);
+            
+            
+        }
+        
+        
+        return ['data'=>'product order has been updated.','status'=>200];
+        
+        
+    }
 
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4e6471982f5b83017158add42be161cd",
+    "content-hash": "a8874e7cfca859e6d21a3545ab2a321c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3117,6 +3117,53 @@
                 }
             ],
             "time": "2021-12-04T23:24:31+00:00"
+        },
+        {
+            "name": "platformcommunity/bunnycdn-storage",
+            "version": "v0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PlatformCommunity/BunnyCDN.PHP.Storage.git",
+                "reference": "8734621d88f3ba2e342967ebdf60bbe185630b76"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PlatformCommunity/BunnyCDN.PHP.Storage/zipball/8734621d88f3ba2e342967ebdf60bbe185630b76",
+                "reference": "8734621d88f3ba2e342967ebdf60bbe185630b76",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.6.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BunnyCDN\\Storage\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dejan Grofelnik Pelzel",
+                    "email": "hello@bunnycdn.com"
+                }
+            ],
+            "description": "Library for BunnyCDN Storage",
+            "support": {
+                "issues": "https://github.com/PlatformCommunity/BunnyCDN.PHP.Storage/issues",
+                "source": "https://github.com/PlatformCommunity/BunnyCDN.PHP.Storage/tree/master"
+            },
+            "time": "2020-08-04T11:21:04+00:00"
         },
         {
             "name": "psr/container",
@@ -9189,5 +9236,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }

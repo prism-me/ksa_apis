@@ -108,7 +108,7 @@ return [
             'driver' => 'single',
             'path' => storage_path('logs/paytabs.log'),
             'level' => 'info',
-        ],
+            ],
     ],
 
 ];

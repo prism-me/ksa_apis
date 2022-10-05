@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\General;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Mail\contactQueryEmail;
@@ -102,5 +103,16 @@ class GeneralController extends Controller
         }
 
         print_r($products);
+    }
+    
+        
+    public function test(){
+        
+        // Video::where('_id','60c997b87b4eeb2e51295e02')->update(['category'=>'Bottle Feeding','category_slug'=>'bottle-feeding']);
+        
+        
+        Video::where('_id','60c9977ddab6a501500f2632')->update(['category'=>'Breast Feeding','category_slug'=>'breast-feeding']);
+        
+            
     }
 }

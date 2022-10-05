@@ -4949,6 +4949,56 @@
             "install-path": "../phpunit/phpunit"
         },
         {
+            "name": "platformcommunity/bunnycdn-storage",
+            "version": "v0.2",
+            "version_normalized": "0.2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PlatformCommunity/BunnyCDN.PHP.Storage.git",
+                "reference": "8734621d88f3ba2e342967ebdf60bbe185630b76"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PlatformCommunity/BunnyCDN.PHP.Storage/zipball/8734621d88f3ba2e342967ebdf60bbe185630b76",
+                "reference": "8734621d88f3ba2e342967ebdf60bbe185630b76",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.6.0"
+            },
+            "time": "2020-08-04T11:21:04+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "BunnyCDN\\Storage\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dejan Grofelnik Pelzel",
+                    "email": "hello@bunnycdn.com"
+                }
+            ],
+            "description": "Library for BunnyCDN Storage",
+            "support": {
+                "issues": "https://github.com/PlatformCommunity/BunnyCDN.PHP.Storage/issues",
+                "source": "https://github.com/PlatformCommunity/BunnyCDN.PHP.Storage/tree/master"
+            },
+            "install-path": "../platformcommunity/bunnycdn-storage"
+        },
+        {
             "name": "psr/container",
             "version": "1.1.2",
             "version_normalized": "1.1.2.0",

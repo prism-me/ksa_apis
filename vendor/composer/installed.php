@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '14f896f29231e0d764c66878c9943679ab407320',
+        'reference' => 'e7af3cce256461a8a353a68cfbcb27281cb15b16',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -454,7 +454,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '14f896f29231e0d764c66878c9943679ab407320',
+            'reference' => 'e7af3cce256461a8a353a68cfbcb27281cb15b16',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -831,6 +831,15 @@
             'aliases' => array(),
             'reference' => '2406855036db1102126125537adb1406f7242fdd',
             'dev_requirement' => true,
+        ),
+        'platformcommunity/bunnycdn-storage' => array(
+            'pretty_version' => 'v0.2',
+            'version' => '0.2.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../platformcommunity/bunnycdn-storage',
+            'aliases' => array(),
+            'reference' => '8734621d88f3ba2e342967ebdf60bbe185630b76',
+            'dev_requirement' => false,
         ),
         'psr/container' => array(
             'pretty_version' => '1.1.2',

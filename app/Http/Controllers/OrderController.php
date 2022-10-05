@@ -11,9 +11,9 @@ class OrderController extends Controller
 {
 
 
-    public function  index() {
+    public function  index(Request $request) {
 
-        $data = Order::where('user_id',Auth::id())->get();
+        $data = Order::where('user_id',$request->user_id)->get();
         return $data;
     }
 
@@ -56,6 +56,11 @@ class OrderController extends Controller
     {
         return $order;
         
+    }
+    
+    public function allOrder(){
+        $orders = Order::all();
+        return $orders;
     }
 
   

@@ -9,7 +9,6 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
-       
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
@@ -18,6 +17,7 @@
         "laravel/tinker": "^2.5",
         "maatwebsite/excel": "^3.1",
         "paytabscom/laravel_paytabs": "^1.1",
+        "platformcommunity/bunnycdn-storage": "^0.2.0",
         "tymon/jwt-auth": "^1.0"
     },
     "require-dev": {

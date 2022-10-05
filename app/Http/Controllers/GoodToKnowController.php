@@ -141,4 +141,22 @@ class GoodToKnowController extends Controller
             echo json_encode(['message'=>'Data has not been deleted' ,'status'=>404]);
         }
     }
+    
+    public function goodToKnowIndexing(Request $request){
+        
+        $data = $request->good_to_know;
+        
+        foreach($data as $single){
+            
+                        
+            $product = GoodToKnow::where('_id' , $single['_id'])->update(['currentIndex' => $single['currentIndex']]);
+            
+            
+        }
+        
+        
+        return ['data'=>'Article order has been updated.','status'=>200];
+        
+        
+    }
 }
