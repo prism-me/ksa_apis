@@ -26,7 +26,12 @@ use App\Http\Controllers\PageController;
 Route::get('get_pages' , [PageController::class ,'get_pages' ]);
 //optimized routes ended
 
-
+Route::get('remove_cache',function(){
+        
+    $cache = Cache::flush();
+    return 'Cache has been flushed.';        
+         
+});
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
