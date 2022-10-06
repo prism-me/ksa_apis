@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Page;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Cache;
+
 class PageController extends Controller
 {
     /**
@@ -15,9 +17,13 @@ class PageController extends Controller
     public function index()
     {   
        
-        $page = Page::whereNull('deleted_at')->get();
-    
-        return $page;
+        $pages = Cache::remember('category_list', 60*60*24 , function () {
+
+            return  Page::whereNull('deleted_at')->get();
+       
+        });    
+           
+        return $pages;
     }
 
     /**
@@ -143,5 +149,13 @@ class PageController extends Controller
         }else{
             echo json_encode(['message'=>'Data has not been deleted' ,'status'=>404]);
         }
+    }
+
+    public function get_pages(){
+
+        $page = Cache::remember('blog' , 60*60*24 ,function(){
+         return Page::select('_id','title','cms_route','slug','arabic.details','meta_details')->whereNull('deleted_at')->get();
+        });
+        return $page;
     }
 }

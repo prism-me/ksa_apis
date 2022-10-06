@@ -277,5 +277,53 @@ class ProductController extends Controller
         
         
     }
+    public function productList(Request $request , $category = null , $sub_category = null , $filter = null)
+    {
+            
+        $search = [];
+         
+        $page = $request->input('page');
+        
+        if($category != null && $category !='null'){
+         
+            $category = Category::where('route',$category)->select('_id')->get();
+         
+            $category = $category[0]->_id;    
+        
+            $search['category'] = $category;
+        }
+        
+        if($sub_category != null && $sub_category !='null'){
+            
+             $sub_category = Category::where('route',$sub_category)->select('_id')->get();
+         
+            $sub_category = $sub_category[0]->_id;  
+            
+            $search['sub_category'] = $sub_category;
+        }
+        
+        if($filter != null && $filter != 'null'){
+            
+            if($filter == 'all'){
+
+                $cat = Product::select('_id','name','featured_img','arabic.name','route')->where($search)->whereNull('deleted_at')->orderby('order','asc')->take(12)->get();
+        
+            }else{
+                
+                $search['sortings'] = $filter;
+                
+                $cat = Product::select('_id','name','featured_img','arabic.name','route')->where($search)->whereNull('deleted_at')->orderby('order','asc')->take(12)->get();
+            }
+            
+        }else{
+          
+            $cat = Product::select('_id','name','featured_img','arabic.name','route')->where($search)->whereNull('deleted_at')->orderby('order','asc')->take(12)->get();
+          
+            
+        }
+        
+              return response()->json([ 'data' => $cat ] , 200);
+        
+    }
 
 }

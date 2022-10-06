@@ -74,6 +74,7 @@ final class Versions
   'paytabscom/laravel_paytabs' => '1.1.1@3d6f748a5f6eef1f0640f99ea8c53fe7a20b652a',
   'phpoffice/phpspreadsheet' => '1.20.0@44436f270bb134b4a94670f3d020a85dfa0a3c02',
   'phpoption/phpoption' => '1.8.1@eab7a0df01fe2344d172bff4cd6dbd3f8b84ad15',
+  'platformcommunity/bunnycdn-storage' => 'v0.2@8734621d88f3ba2e342967ebdf60bbe185630b76',
   'psr/container' => '1.1.2@513e0666f7216c7459170d56df27dfcefe1689ea',
   'psr/event-dispatcher' => '1.0.0@dbefd12671e8a14ec7f180cab83036ed26714bb0',
   'psr/http-client' => '1.0.1@2dfb5f6c5eff0e91e20e913f8c5452ed95b86621',
@@ -162,7 +163,7 @@ final class Versions
   'sebastian/version' => '3.0.2@c6c1022351a901512170118436c764e473f6de8c',
   'symfony/debug' => 'v4.4.31@43ede438d4cb52cd589ae5dc070e9323866ba8e0',
   'theseer/tokenizer' => '1.2.1@34a41e998c2183e22995f158c581e7b5e755ab9e',
-  'laravel/laravel' => 'dev-master@e7af3cce256461a8a353a68cfbcb27281cb15b16',
+  'laravel/laravel' => 'dev-master@452a6639173e1181ff07965efd883d88a3ad6b16',
 );
 
     private function __construct()

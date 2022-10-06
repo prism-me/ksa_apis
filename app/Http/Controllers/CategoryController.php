@@ -6,6 +6,8 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Cache;
+
 class CategoryController extends Controller
 {
 
@@ -206,6 +208,21 @@ class CategoryController extends Controller
        }
        
    }
+
+    }
+
+
+    public function categoryList(){
+            
+        // Cache::forget('category_list');
+
+        $categories = Cache::remember('category_list', 60*60*24 , function () {
+
+         return  Category::select('_id','parent_id','name','featured_img','route','order','boiler_plate','arabic.name','arabic.boiler_plate')->with('children:_id,parent_id,name,featured_img,route,order,boiler_plate,arabic.name,arabic.boiler_plate')->whereNull('deleted_at')->get();
+        
+        });    
+        
+        return $categories;
 
     }
 }

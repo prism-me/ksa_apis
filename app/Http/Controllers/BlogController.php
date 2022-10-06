@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class BlogController extends Controller
 {
@@ -16,7 +17,12 @@ class BlogController extends Controller
     public function index()
     {   
      
-        $blog = Blog::orderBy('_id','desc')->get();
+        $blog = Cache::remember('blog' , 60*60 ,function(){
+
+            return Blog::select('_id','title','featured_img','route','description','arabic.title','arabic.featured_img','arabic.description')->orderBy('_id','desc')->get();
+       
+        });
+
         return $blog;
     }
 

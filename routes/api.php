@@ -9,7 +9,7 @@ use App\Http\Controllers\PaytabsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\SearchController;
-//use App\Http\Controllers\AddressController;
+use App\Http\Controllers\PageController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,6 +20,13 @@ use App\Http\Controllers\SearchController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+// Optimized routes started
+
+Route::get('get_pages' , [PageController::class ,'get_pages' ]);
+//optimized routes ended
+
+
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
@@ -39,9 +46,11 @@ Route::resource('products','ProductController');
 #product list order
 Route::post('product-indexing', 'ProductController@productIndexing');
 Route::get('filteredProduct/{category?}/{sub_category?}/{filter?}','ProductController@filteredProduct');
+Route::get('product_list/{category?}/{sub_category?}/{filter?}' , 'ProductController@productList');
 Route::resource('reviews','ReviewController');
 // Route::resource('uploads','UploadController');
 Route::resource('todo', 'TodoController');
+Route::get('category_list' , 'CategoryController@categoryList');
 // Route::post('multipleUploads','UploadController@multipleUpload');
 Route::resource('widgets','WidgetController');
 Route::get('all_widgets/{id}','WidgetController@all_widgets');
@@ -132,5 +141,3 @@ Route::get('auth/all_users', [AuthController::class, 'all_users']);
 Route::fallback(function () {
     echo  json_encode(['message'=>'Undefined Route']);
 });
-
-
